@@ -1,3 +1,3 @@
 package com.hasanze.moviesapp.classes
 
-class Movie(title:String,image:String,rating:String,releaseYear:Int,genre:Array<String>)
+data class Movie(val title:String,val image:String,val rating:Double, val releaseYear:Int,val genre:String,val picture :ByteArray)
