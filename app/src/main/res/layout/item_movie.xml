@@ -7,53 +7,78 @@
 
     <ImageView
         android:id="@+id/movieCardImage"
-        android:layout_width="200dp"
-        android:layout_height="138dp"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/movie1" />
 
     <TextView
         android:id="@+id/movieCardTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Title"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/movieCardImage"
         app:layout_constraintTop_toTopOf="@+id/movieCardImage" />
 
     <TextView
         android:id="@+id/movieCardYear"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Release Year"
-        app:layout_constraintStart_toEndOf="@+id/movieCardImage"
-        app:layout_constraintTop_toBottomOf="@+id/movieCardTitle" />
+        app:layout_constraintBottom_toTopOf="@+id/movieCardGenre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/movieCardImage" />
 
     <TextView
         android:id="@+id/movieCardGenre"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Genre"
-        app:layout_constraintStart_toEndOf="@+id/movieCardImage"
-        app:layout_constraintTop_toBottomOf="@+id/movieCardYear" />
+        app:layout_constraintBottom_toTopOf="@+id/movieCardRating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/movieCardImage" />
 
     <TextView
         android:id="@+id/movieCardRating"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Rating"
-        app:layout_constraintStart_toEndOf="@+id/movieCardImage"
-        app:layout_constraintTop_toBottomOf="@+id/movieCardGenre" />
+        app:layout_constraintBottom_toBottomOf="@+id/movieCardImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/movieCardImage" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

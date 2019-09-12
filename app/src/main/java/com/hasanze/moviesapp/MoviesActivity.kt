@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_movies.*
 
 class MoviesActivity : AppCompatActivity() {
 
-    
+
     //for fragment selection
     private lateinit var selectedFrag: Fragment
 
