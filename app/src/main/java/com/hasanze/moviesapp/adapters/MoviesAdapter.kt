@@ -36,7 +36,6 @@ class MoviesAdapter (private val context:Context , private val movies : List<Mov
 
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
-
         //pointers to movie card layout view
 
         private val movieImage :ImageView = itemView.findViewById(R.id.movieCardImage)
@@ -44,8 +43,6 @@ class MoviesAdapter (private val context:Context , private val movies : List<Mov
         private val movieYear : TextView = itemView.findViewById(R.id.movieCardYear)
         private val movieGenre : TextView = itemView.findViewById(R.id.movieCardGenre)
         private val movieRating : TextView = itemView.findViewById(R.id.movieCardRating)
-
-
 
         // Binding Data
 
@@ -77,21 +74,8 @@ class MoviesAdapter (private val context:Context , private val movies : List<Mov
 
                 context.startActivity(intent)
 
-
-
-
-
-
-
             }
-
-
-
-
-
-
         }
-
     }
 
 

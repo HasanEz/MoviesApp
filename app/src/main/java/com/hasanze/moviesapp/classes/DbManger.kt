@@ -41,7 +41,7 @@ class DbManger(context: Context){
 
     }
 
-
+    //Data base open helper to create or upgrade data base
 
     inner class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, dbName, null, dbVersion) {
 
@@ -55,11 +55,10 @@ class DbManger(context: Context){
 
         }
 
-
     }
 
 
-
+    // Custom functions
     fun addMovie(values: ContentValues): Long {
 
         return sqlDb!!.insert(dbTable,"",values)
@@ -67,12 +66,22 @@ class DbManger(context: Context){
 
     fun queryBuilder(projection:Array<String>,selection:String,selectionArgs:Array<String>,sortOrder:String):Cursor{
 
-
         val queryBuilder = SQLiteQueryBuilder()
         queryBuilder.tables = dbTable
-
         val cursor = queryBuilder.query(sqlDb,projection,selection,selectionArgs,null,null,sortOrder)
         return cursor
+    }
+
+    fun checkMovieExist(projection:Array<String>,selection:String,selectionArgs:Array<String>,sortOrder:String): Boolean{
+
+        val queryBuilder = SQLiteQueryBuilder()
+
+        queryBuilder.tables = dbTable
+        val cursor = queryBuilder.query(sqlDb,projection,selection,selectionArgs,null,null,sortOrder)
+
+        return cursor.count > 0
+
+
     }
 
 }

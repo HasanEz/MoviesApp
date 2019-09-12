@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_movies.*
 
 class MoviesActivity : AppCompatActivity() {
-    lateinit var selectedFrag: Fragment
+
+    
+    //for fragment selection
+    private lateinit var selectedFrag: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,8 +19,8 @@ class MoviesActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment())
             .commit()
 
+        //BOTTOM NAVIGATION
 
-//>> BOTTOM NAVIGATION <<\\
         bottomNavigationView.setOnNavigationItemSelectedListener {
 
             // no comments needed the code is self explanatory

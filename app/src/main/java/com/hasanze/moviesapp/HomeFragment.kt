@@ -23,24 +23,25 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        //load movies list
         loadMovies("%", view)
         myView= view
         return view
-
-
     }
-
-
 
     private fun loadMovies(title: String, view: View) {
 
-        val dbManger = DbManger(requireContext())
+        //creating instance of db manger
 
+        val dbManger = DbManger(requireContext())
+        //parameters for search query
         val projections = arrayOf("ID", "title", "rating", "releaseYear", "genre", "picture")
         val selectionArgs = arrayOf(title)
         val cursor = dbManger.queryBuilder(projections, "title like ?", selectionArgs, "title")
 
-
+        //iteration on cursor..
         if (cursor.moveToFirst()) {
 
             do {
@@ -53,7 +54,6 @@ class HomeFragment : Fragment() {
 
                 listOfMovies.add(Movie(title, "", rating, releaseYear, genre, picture))
 
-//                Log.d("cursor", "$ID $title $rating $releaseYear $genre $picture")
             } while (cursor.moveToNext())
         }
 
@@ -72,6 +72,5 @@ class HomeFragment : Fragment() {
 
 
     }
-
 
 }
